@@ -1,7 +1,6 @@
-import {telephoneCheck} from '../../algs-data-structures/telephoneCheck';
+import { telephoneCheck } from '../../algs-data-structures/telephoneCheck';
 
-test('telephoneCheck("555-555-5555") should return a boolean.', () => {
-});
+test('telephoneCheck("555-555-5555") should return a boolean.', () => {});
 
 test('telephoneCheck("1 555-555-5555") should return true.', () => {
   let expected = true;
@@ -164,11 +163,3 @@ test('telephoneCheck("(555)5(55?)-5555") should return false.', () => {
   let received = telephoneCheck('(555)5(55?)-5555');
   expect(received).toEqual(expected);
 });
-
-
-
-
-
-
-
-
