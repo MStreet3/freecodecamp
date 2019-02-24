@@ -1,6 +1,10 @@
 import { telephoneCheck } from '../../algs-data-structures/telephoneCheck';
 
-test('telephoneCheck("555-555-5555") should return a boolean.', () => {});
+test('telephoneCheck("555-555-5555") should return a boolean.', () => {
+  let expected = typeof true;
+  let received = typeof telephoneCheck('555-555-5555');
+  expect(received).toEqual(expected);
+});
 
 test('telephoneCheck("1 555-555-5555") should return true.', () => {
   let expected = true;
