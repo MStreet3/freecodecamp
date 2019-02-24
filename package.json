@@ -10,7 +10,7 @@
   "lint-staged": {
     "{src,__mocks__}/**/*.{js,json}": [
       "prettier --single-quote --arrow-parens=always --write",
-      "./node_modules/.bin/eslint",
+      "./node_modules/.bin/eslint --fix",
       "git add"
     ]
   },
