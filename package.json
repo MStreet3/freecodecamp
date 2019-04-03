@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "author": "Mike Street",
   "dependencies": {
-    "@babel/polyfill": "^7.2.5"
+    "@babel/polyfill": "^7.2.5",
+    "bignumber.js": "^8.1.1",
+    "immutable": "^4.0.0-rc.12"
   },
   "license": "",
   "lint-staged": {
