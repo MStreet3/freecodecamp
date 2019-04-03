@@ -4,13 +4,15 @@
   "version": "1.0.0",
   "author": "Mike Street",
   "dependencies": {
-    "@babel/polyfill": "^7.2.5"
+    "@babel/polyfill": "^7.2.5",
+    "bignumber.js": "^8.1.1",
+    "immutable": "^4.0.0-rc.12"
   },
   "license": "",
   "lint-staged": {
     "{src,__mocks__}/**/*.{js,json}": [
       "prettier --single-quote --arrow-parens=always --write",
-      "./node_modules/.bin/eslint",
+      "./node_modules/.bin/eslint --fix",
       "git add"
     ]
   },
