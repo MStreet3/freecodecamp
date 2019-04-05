@@ -1,3 +1,31 @@
+/*
+  Project:
+
+  Design a cash register drawer function checkCashRegister() 
+  that accepts purchase price as the first argument (price),
+  payment as the second argument (cash), and   cash-in-drawer (cid) 
+  as the third argument.
+
+  cid is a 2D array listing available currency.
+
+  The checkCashRegister() function should always return an object 
+  with a status key and a change key.
+
+  Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer 
+  is less than the change due, or if you cannot return the exact change.
+
+  Return {status: "CLOSED", change: [...]} with cash-in-drawer 
+  as the value for the key change if it is equal to the change due.
+
+  Otherwise, return {status: "OPEN", change: [...]}, with the 
+  change due in coins and bills, sorted in highest to lowest order, 
+  as the value of the change key.
+
+  Note:
+  This version of the project is done with plain JavaScript.
+
+*/
+
 function totalFunds(cid) {
   return cid.reduce((total, denomination) => {
     return total + denomination[1];
@@ -55,20 +83,25 @@ function fillDrawer(cid) {
 
 function countOutChange(change, cid) {
   const register = fillDrawer(cid);
-  return register.sortedDenominations
-    .map((denomination) => {
-      let available = register.filled[denomination]['count'];
-      let unitValue = register.filled[denomination]['unitValue'];
-      let remainder = Math.round((change % unitValue + 0.0000001) * 100) / 100;
-      let count = Math.round((change - remainder) / unitValue);
-      if (count > 0) {
-        let countValue =
-          count >= available ? available * unitValue : count * unitValue;
-        change = Math.round((change - countValue + 0.0000001) * 100) / 100;
-        return [denomination, countValue];
-      }
-    })
-    .filter((denomination) => denomination);
+  return (
+    register.sortedDenominations
+      // for each denomination in the drawer from largest to smallest ..
+      .map((denomination) => {
+        let available = register.filled[denomination]['count'];
+        let unitValue = register.filled[denomination]['unitValue'];
+        let remainder =
+          Math.round((change % unitValue + 0.0000001) * 100) / 100;
+        let count = Math.round((change - remainder) / unitValue);
+        if (count > 0) {
+          let countValue =
+            count >= available ? available * unitValue : count * unitValue;
+          change = Math.round((change - countValue + 0.0000001) * 100) / 100;
+          return [denomination, countValue];
+        }
+      })
+      // remove the undefined denominations
+      .filter((denomination) => denomination)
+  );
 }
 
 function checkCashRegister(price, cash, cid) {
