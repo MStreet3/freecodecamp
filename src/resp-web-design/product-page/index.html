@@ -13,22 +13,38 @@
 
 <body>
     <header id="header">
-        <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
             <a class="navbar-brand" href="#">
-                <img src="./MediumLogo400_400.png" width="44px" height="44px"
+                <img src="./MediumLogo400_400.png" id="header-img" width="44px" height="44px"
                     alt="A capital letter O encoded in binary">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarLinks">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#home">Home</a>
+                    <a class="nav-item nav-link" href="#about-us">About Us</a>
+                    <a class="nav-item nav-link" href="#features">Features</a>
+                    <a class="nav-item nav-link" href="#contact-us">Contact Us</a>
+                </div>
+            </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col">
+                    <h1 class="display-4 text-center">We make amazing Jiu Jitsu products.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="home">
         <div class="row justify-content-center">
             <div class="col-6">
-                <h2 class="text-center">We make amazing Jiu Jitsu products.</h2>
-                <form action="https://www.freecodecamp.com/email-submit" method="POST">
+                <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
                     <div class="form-group">
                         <label id="email-label" for="email">Email</label>
                         <input type="email" class="form-control" id="email"
@@ -40,38 +56,52 @@
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="embed-responsive">
-                <iframe width="560" height="315" class="embed-responsive-item"
-                    src="https://www.youtube-nocookie.com/embed/O6HZLlDqweI" allowfullscreen></iframe>
+        <section id="about-us">
+            <div class="row mb-3">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" id="video" height="315" src="https://www.youtube.com/embed/qbJ1Qk8Ewcs" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Durable</h5>
-                        <p class="card-text">Our products bend, but never break!</p>
+        </section>
+        <section id="features">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Durable</h5>
+                            <p class="card-text">Our products bend, but never break!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Stylish and Classic</h5>
+                            <p class="card-text">Look great while you fight to the very end.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Stylish</h5>
+                            <p class="card-text">Look great while you fight to the very end.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Stylish and Classic</h5>
-                        <p class="card-text">Look great while you fight to the very end.</p>
-                    </div>
+        </section>
+        <section id="contact-us">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1 class="display-4">Visit Us Sometime!</h1>
+                    <p>12345 Okie Street</p>
+                    <p>Pike's Place, Utah</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Stylish</h5>
-                        <p class="card-text">Look great while you fight to the very end.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
 
 
         <!-- Optional JavaScript -->
