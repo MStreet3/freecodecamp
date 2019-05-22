@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <title>Survey Form</title>
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" id="title">A Simple Survey Form</h1>
+            <p class="lead" id="description">This form's requirements are given by FreeCodeCamp.</p>
+        </div>
+    </div>
+    <div class="container">
+        <form id="survey-form">
+            <div class="form-group">
+                <label id="name-label" for="name">First Name</label>
+                <input type="text" class="form-control" id="name" placeholder="First Name" />
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name" />
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Company Email" />
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="optIn" id="optIn" value="Yes" checked>
+                <label class="form-check-label" for="optIn">
+                    Opt Into Emails (Yes)
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="optOut" id="optOut" value="No">
+                <label class="form-check-label" for="optOut">
+                    Opt Out of Emails
+                </label>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-4">
+                    How did you hear about us?
+                </div>
+                <div class="col-8">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Google Ad" id="check1" name="check1">
+                        <label class="form-check-label" for="check1">
+                            Google Ad
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Attended Webinar" id="check2"
+                            name="check2">
+                        <label class="form-check-label" for="check2">
+                            Attended Webinar
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Instagram/Facebook Ad" id="check3"
+                            name="check3">
+                        <label class="form-check-label" for="check3">
+                            Instagram/Facebook Ad
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <label id="number-label" for="number" class="col-4 col-form-label">Satisfaction Rating</label>
+                <div class="col-8">
+                    <input type="number" class="form-control" id="number" placeholder="Enter a score from 1 to 5."
+                        min="1" max="5" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="">
+                    <label id="dropdown-label" for="dropdown">Company Size</label>
+                    <select class="form-control" id="dropdown">
+                        <option selected>1 - 10</option>
+                        <option>11 - 50</option>
+                        <option>51 - 250</option>
+                        <option>251 - 1000</option>
+                        <option> 1001 - 5000</option>
+                        <option>&gt; 5000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label id="feedback-label" for="feedbackText">Additional Comments</label>
+                <textarea class="form-control" id="feedbackText" rows="6"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <button type="submit" id="submit" class="btn btn-primary btn-block">Submit</button>
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
