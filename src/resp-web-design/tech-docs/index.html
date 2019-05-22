@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
+</head>
+<title>Technical Documentation</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="navbar">
+            <header class="sidebar-header">
+                <h3 class="display-4">Linked Lists</h3>
+            </header>
+            <ul class="list-unstyled components">
+                <li>
+                    <a class="nav-item nav-link" href="#History">History</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" href="#Basic_Concepts">Basic Concepts</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" href="#Tradeoffs">Tradeoffs</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" href="#Linked_List_Operations">Linked List Operations</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" href="#Related_Data_Structures">Related Data Structures</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" href="#References">References</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content -->
+        <main id="main-doc">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+            </nav>
+            <section class="main-section container" id="History">
+                <header>
+                    <h2>History</h2>
+                </header>
+                <p>Linked lists were developed in 1955–1956 by Allen Newell, Cliff Shaw and Herbert A. Simon at RAND
+                    Corporation as the primary data structure for their Information Processing Language. IPL was used by
+                    the authors to develop several early artificial intelligence programs, including the Logic Theory
+                    Machine, the General Problem Solver, and a computer chess program. Reports on their work appeared in
+                    IRE Transactions on Information Theory in 1956, and several conference proceedings from 1957 to
+                    1959, including Proceedings of the Western Joint Computer Conference in 1957 and 1958, and
+                    Information Processing (Proceedings of the first UNESCO International Conference on Information
+                    Processing) in 1959. The now-classic diagram consisting of blocks representing list nodes with
+                    arrows pointing to successive list nodes appears in "Programming the Logic Theory Machine" by Newell
+                    and Shaw in Proc. WJCC, February 1957. Newell and Simon were recognized with the ACM Turing Award in
+                    1975 for having "made basic contributions to artificial intelligence, the psychology of human
+                    cognition, and list processing". The problem of machine translation for natural language processing
+                    led Victor Yngve at Massachusetts Institute of Technology (MIT) to use linked lists as data
+                    structures in his COMIT programming language for computer research in the field of linguistics. A
+                    report on this language entitled "A programming language for mechanical translation" appeared in
+                    Mechanical Translation in 1958.[citation needed]</p>
+
+                <p>
+                    LISP, standing for list processor, was created by John McCarthy in 1958 while he was at MIT and in
+                    1960 he published its design in a paper in the Communications of the ACM, entitled "Recursive
+                    Functions of Symbolic Expressions and Their Computation by Machine, Part I". One of LISP's major
+                    data structures is the linked list.
+
+                </p>
+                <p>
+                    By the early 1960s, the utility of both linked lists and languages which use these structures as
+                    their primary data representation was well established. Bert Green of the MIT Lincoln Laboratory
+                    published a review article entitled "Computer languages for symbol manipulation" in IRE Transactions
+                    on Human Factors in Electronics in March 1961 which summarized the advantages of the linked list
+                    approach. A later review article, "A Comparison of list-processing computer languages" by Bobrow and
+                    Raphael, appeared in Communications of the ACM in April 1964.
+
+                </p>
+                <p>Several operating systems developed by Technical Systems Consultants (originally of West Lafayette
+                    Indiana, and later of Chapel Hill, North Carolina) used singly linked lists as file structures. A
+                    directory entry pointed to the first sector of a file, and succeeding portions of the file were
+                    located by traversing pointers. Systems using this technique included Flex (for the Motorola 6800
+                    CPU), mini-Flex (same CPU), and Flex9 (for the Motorola 6809 CPU). A variant developed by TSC for
+                    and marketed by Smoke Signal Broadcasting in California, used doubly linked lists in the same
+                    manner.</p>
+
+                <p>The TSS/360 operating system, developed by IBM for the System 360/370 machines, used a double linked
+                    list for their file system catalog. The directory structure was similar to Unix, where a directory
+                    could contain files and other directories and extend to any depth. </p>
+            </section>
+            <section class="main-section container" id="Basic_Concepts">
+                <header>
+                    <h2>Basic Concepts</h2>
+                </header>
+                <p>Each record of a linked list is often called an 'element' or 'node'.</p>
+
+                <p>The field of each node that contains the address of the next node is usually called the 'next link'
+                    or 'next pointer'. The remaining fields are known as the 'data', 'information', 'value', 'cargo', or
+                    'payload' fields.</p>
+
+                <p>The 'head' of a list is its first node. The 'tail' of a list may refer either to the rest of the list
+                    after the head, or to the last node in the list. In Lisp and some derived languages, the next node
+                    may be called the 'cdr' (pronounced could-er) of the list, while the payload of the head node may be
+                    called the 'car'. </p>
+                <h3>Singly Linked Lists</h3>
+                <pre class="pre-scrollable">
+                    <code>
+                            node addNode(node head, int value) {
+                                node temp, p; // declare two nodes temp and p
+                                temp = createNode(); // assume createNode creates a new node with data = 0 and next pointing to NULL.
+                                temp->data = value; // add element's value to data part of node
+                                if(head == NULL) {
+                                    head = temp;     // when linked list is empty
+                                }
+                                else {
+                                    p = head;//assign head to p 
+                                    while(p->next != NULL) {
+                                        p = p->next; // traverse the list until p is the last node.The last node always points to NULL.
+                                    }
+                                    p->next = temp; // Point the previous last node to the new node created.
+                                }
+                                return head;
+                             
+                             }
+                    </code>
+                </pre>
+                <h3>Doubly Linked Lists</h3>
+                <p>In a 'doubly linked list', each node contains, besides the next-node link, a second link field
+                    pointing to the 'previous' node in the sequence. The two links may be called 'forward('s') and
+                    'backwards', or 'next' and 'prev'('previous'). </p>
+
+                <p>A technique known as XOR-linking allows a doubly linked list to be implemented using a single link
+                    field in each node. However, this technique requires the ability to do bit operations on addresses,
+                    and therefore may not be available in some high-level languages.</p>
+
+                <p>Many modern operating systems use doubly linked lists to maintain references to active processes,
+                    threads, and other dynamic objects.[2] A common strategy for rootkits to evade detection is to
+                    unlink themselves from these lists.[3] </p>
+                <h3>Other Related Flavors</h3>
+                <ul>
+                    <li>Multiply linked list</li>
+                    <li>Circular Linked List</li>
+                    <li>Sentinel Nodes</li>
+                    <li>Empty Lists</li>
+                    <li>Hash Linking</li>
+                    <li>List Handles</li>
+                </ul>
+
+            </section>
+            <section class="main-section container" id="Tradeoffs">
+                <header>
+                    <h2>Tradeoffs</h2>
+                </header>
+            </section>
+            <section class="main-section container" id="Linked_List_Operations">
+                <header>
+                    <h2>Linked List Operations</h2>
+                </header>
+                <p>A single linked list class</p>
+                <pre>
+                    <code>
+                            # Node class 
+                            class Node: 
+                            
+                                # Function to initialize the node object 
+                                def __init__(self, data): 
+                                    self.data = data # Assign data 
+                                    self.next = None # Initialize next as null 
+                            
+                            # Linked List class 
+                            class LinkedList: 
+                                
+                                # Function to initialize the Linked List object 
+                                def __init__(self): 
+                                    self.head = None
+                            
+                    </code>
+                </pre>
+                <p>Add a node to the front of the linked list:</p>
+                <pre>
+                    <code>
+                            # This function is in LinkedList class 
+                            # Function to insert a new node at the beginning 
+                            def push(self, new_data): 
+                            
+                                # 1 & 2: Allocate the Node & 
+                                #	 Put in the data 
+                                new_node = Node(new_data) 
+                                    
+                                # 3. Make next of new Node as head 
+                                new_node.next = self.head 
+                                    
+                                # 4. Move the head to point to new Node 
+                                self.head = new_node 
+                            
+                    </code>
+                </pre>
+                <p>Insert a node after a given index:</p>
+                <pre>
+                    <code>
+                            # This function is in LinkedList class. 
+                            # Inserts a new node after the given prev_node. This method is 
+                            # defined inside LinkedList class shown above */ 
+                            def insertAfter(self, prev_node, new_data): 
+                            
+                                # 1. check if the given prev_node exists 
+                                if prev_node is None: 
+                                    print "The given previous node must inLinkedList."
+                                    return
+                            
+                                # 2. Create new node & 
+                                # 3. Put in the data 
+                                new_node = Node(new_data) 
+                            
+                                # 4. Make next of new Node as next of prev_node 
+                                new_node.next = prev_node.next
+                            
+                                # 5. make next of prev_node as new_node 
+                                prev_node.next = new_node 
+                            
+                    </code>
+                </pre>
+                <p>Append a node to the end of a Linked List</p>
+                <pre>
+                    <code>
+                            # This function is defined in Linked List class 
+                            # Appends a new node at the end. This method is 
+                            # defined inside LinkedList class shown above */ 
+                            def append(self, new_data): 
+                            
+                            # 1. Create a new node 
+                            # 2. Put in the data 
+                            # 3. Set next as None 
+                            new_node = Node(new_data) 
+                            
+                            # 4. If the Linked List is empty, then make the 
+                            # new node as head 
+                            if self.head is None: 
+                                    self.head = new_node 
+                                    return
+                            
+                            # 5. Else traverse till the last node 
+                            last = self.head 
+                            while (last.next): 
+                                last = last.next
+                            
+                            # 6. Change the next of last node 
+                            last.next = new_node 
+                            
+                    </code>
+                </pre>
+            </section>
+            <section class="main-section container" id="Related_Data_Structures">
+                <header>
+                    <h2>Related Data Structures</h2>
+                </header>
+            </section>
+            <section class="main-section container" id="References">
+                <header>
+                    <h2>References</h2>
+                </header>
+                <ol>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Linked_list">Wikipedia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/">Geeks for Geeks</a>
+                    </li>
+                </ol>
+            </section>
+        </main>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#navbar').toggleClass('active');
+                });
+
+            });
+        </script>
+</body>
+
+</html>
