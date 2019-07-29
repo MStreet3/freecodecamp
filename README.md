@@ -5,6 +5,8 @@ repo for freecodecamp cert projects
 ## JavaScript Algorithms & Data Structures 
 [View Certification](https://www.freecodecamp.org/certification/mstreet3/javascript-algorithms-and-data-structures)
 
+[Solutions](https://github.com/MStreet3/freecodecamp/tree/master/src/algs-data-structures)
+
 ## Responsive Web Design 
 [View Certification](https://www.freecodecamp.org/certification/mstreet3/responsive-web-design)
 
